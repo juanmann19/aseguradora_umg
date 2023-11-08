@@ -30,6 +30,7 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            button1 = new Button();
             btnEliminar = new Button();
             btnEditar = new Button();
             txtEstado = new TextBox();
@@ -40,17 +41,18 @@
             label1 = new Label();
             btnAgregarProveedor = new Button();
             tabPage2 = new TabPage();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
+            btn_mostrarAfiliados = new Button();
+            txtfincobertura = new DateTimePicker();
+            txtiniciocobertura = new DateTimePicker();
             label8 = new Label();
-            textBox6 = new TextBox();
+            txtmontocobertura = new TextBox();
             label9 = new Label();
             label7 = new Label();
             btnEliminarAfiliado = new Button();
             btnEditarAfiliado = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtestadoafiliado = new TextBox();
+            txtnombreafiliado = new TextBox();
+            txtCodAfiliado = new TextBox();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -67,14 +69,15 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.ImeMode = ImeMode.On;
-            tabControl1.Location = new Point(12, 36);
+            tabControl1.Location = new Point(12, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(254, 390);
+            tabControl1.Size = new Size(254, 414);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(button1);
             tabPage1.Controls.Add(btnEliminar);
             tabPage1.Controls.Add(btnEditar);
             tabPage1.Controls.Add(txtEstado);
@@ -87,10 +90,20 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(246, 362);
+            tabPage1.Size = new Size(246, 386);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Proveedores";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(58, 206);
+            button1.Name = "button1";
+            button1.Size = new Size(123, 23);
+            button1.TabIndex = 5;
+            button1.Text = "Mostrar Proveedores";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // btnEliminar
             // 
@@ -173,17 +186,18 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(dateTimePicker2);
-            tabPage2.Controls.Add(dateTimePicker1);
+            tabPage2.Controls.Add(btn_mostrarAfiliados);
+            tabPage2.Controls.Add(txtfincobertura);
+            tabPage2.Controls.Add(txtiniciocobertura);
             tabPage2.Controls.Add(label8);
-            tabPage2.Controls.Add(textBox6);
+            tabPage2.Controls.Add(txtmontocobertura);
             tabPage2.Controls.Add(label9);
             tabPage2.Controls.Add(label7);
             tabPage2.Controls.Add(btnEliminarAfiliado);
             tabPage2.Controls.Add(btnEditarAfiliado);
-            tabPage2.Controls.Add(textBox1);
-            tabPage2.Controls.Add(textBox2);
-            tabPage2.Controls.Add(textBox3);
+            tabPage2.Controls.Add(txtestadoafiliado);
+            tabPage2.Controls.Add(txtnombreafiliado);
+            tabPage2.Controls.Add(txtCodAfiliado);
             tabPage2.Controls.Add(label4);
             tabPage2.Controls.Add(label5);
             tabPage2.Controls.Add(label6);
@@ -191,26 +205,36 @@
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(246, 362);
+            tabPage2.Size = new Size(246, 386);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Afiliados";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker2
+            // btn_mostrarAfiliados
             // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(115, 128);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(100, 23);
-            dateTimePicker2.TabIndex = 22;
+            btn_mostrarAfiliados.Location = new Point(61, 330);
+            btn_mostrarAfiliados.Name = "btn_mostrarAfiliados";
+            btn_mostrarAfiliados.Size = new Size(123, 23);
+            btn_mostrarAfiliados.TabIndex = 23;
+            btn_mostrarAfiliados.Text = "Mostrar Proveedores";
+            btn_mostrarAfiliados.UseVisualStyleBackColor = true;
+            btn_mostrarAfiliados.Click += btn_mostrarAfiliados_Click;
             // 
-            // dateTimePicker1
+            // txtfincobertura
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(115, 96);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(100, 23);
-            dateTimePicker1.TabIndex = 21;
+            txtfincobertura.Format = DateTimePickerFormat.Short;
+            txtfincobertura.Location = new Point(115, 128);
+            txtfincobertura.Name = "txtfincobertura";
+            txtfincobertura.Size = new Size(100, 23);
+            txtfincobertura.TabIndex = 22;
+            // 
+            // txtiniciocobertura
+            // 
+            txtiniciocobertura.Format = DateTimePickerFormat.Short;
+            txtiniciocobertura.Location = new Point(115, 96);
+            txtiniciocobertura.Name = "txtiniciocobertura";
+            txtiniciocobertura.Size = new Size(100, 23);
+            txtiniciocobertura.TabIndex = 21;
             // 
             // label8
             // 
@@ -221,12 +245,12 @@
             label8.TabIndex = 20;
             label8.Text = "Fecha Fin \r\nde Cobertura";
             // 
-            // textBox6
+            // txtmontocobertura
             // 
-            textBox6.Location = new Point(115, 169);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 19;
+            txtmontocobertura.Location = new Point(115, 169);
+            txtmontocobertura.Name = "txtmontocobertura";
+            txtmontocobertura.Size = new Size(100, 23);
+            txtmontocobertura.TabIndex = 19;
             // 
             // label9
             // 
@@ -252,8 +276,9 @@
             btnEliminarAfiliado.Name = "btnEliminarAfiliado";
             btnEliminarAfiliado.Size = new Size(123, 23);
             btnEliminarAfiliado.TabIndex = 13;
-            btnEliminarAfiliado.Text = "Eliminar Proveedor";
+            btnEliminarAfiliado.Text = "Eliminar Afiliado";
             btnEliminarAfiliado.UseVisualStyleBackColor = true;
+            btnEliminarAfiliado.Click += btnEliminarAfiliado_Click;
             // 
             // btnEditarAfiliado
             // 
@@ -261,29 +286,30 @@
             btnEditarAfiliado.Name = "btnEditarAfiliado";
             btnEditarAfiliado.Size = new Size(105, 23);
             btnEditarAfiliado.TabIndex = 12;
-            btnEditarAfiliado.Text = "Editar Proveedor";
+            btnEditarAfiliado.Text = "Editar Afiliado";
             btnEditarAfiliado.UseVisualStyleBackColor = true;
+            btnEditarAfiliado.Click += btnEditarAfiliado_Click;
             // 
-            // textBox1
+            // txtestadoafiliado
             // 
-            textBox1.Location = new Point(115, 198);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(40, 23);
-            textBox1.TabIndex = 9;
+            txtestadoafiliado.Location = new Point(115, 198);
+            txtestadoafiliado.Name = "txtestadoafiliado";
+            txtestadoafiliado.Size = new Size(40, 23);
+            txtestadoafiliado.TabIndex = 9;
             // 
-            // textBox2
+            // txtnombreafiliado
             // 
-            textBox2.Location = new Point(115, 60);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 10;
+            txtnombreafiliado.Location = new Point(115, 60);
+            txtnombreafiliado.Name = "txtnombreafiliado";
+            txtnombreafiliado.Size = new Size(100, 23);
+            txtnombreafiliado.TabIndex = 10;
             // 
-            // textBox3
+            // txtCodAfiliado
             // 
-            textBox3.Location = new Point(115, 26);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 11;
+            txtCodAfiliado.Location = new Point(115, 26);
+            txtCodAfiliado.Name = "txtCodAfiliado";
+            txtCodAfiliado.Size = new Size(100, 23);
+            txtCodAfiliado.TabIndex = 11;
             // 
             // label4
             // 
@@ -326,17 +352,17 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(323, 73);
+            dataGridView1.Location = new Point(293, 36);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(435, 282);
+            dataGridView1.Size = new Size(495, 386);
             dataGridView1.TabIndex = 1;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(795, 450);
             Controls.Add(dataGridView1);
             Controls.Add(tabControl1);
             Name = "Form1";
@@ -368,18 +394,20 @@
         private Button btnEliminar;
         private Button btnEliminarAfiliado;
         private Button btnEditarAfiliado;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtestadoafiliado;
+        private TextBox txtnombreafiliado;
+        private TextBox txtCodAfiliado;
         private Label label4;
         private Label label5;
         private Label label6;
         private Button btnGuardarAfiliado;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker txtfincobertura;
+        private DateTimePicker txtiniciocobertura;
         private Label label8;
-        private TextBox textBox6;
+        private TextBox txtmontocobertura;
         private Label label9;
         private Label label7;
+        private Button button1;
+        private Button btn_mostrarAfiliados;
     }
 }

@@ -96,7 +96,7 @@ namespace aseguradora
             }
             else
             {
-                MessageBox.Show("Seleccione una columna por favor.");
+                MessageBox.Show("Seleccione una fila por favor.");
             }
         }
 
